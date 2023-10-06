@@ -1,5 +1,6 @@
 import './styles/App.css'
 import { Settings } from './components/settings'
+import { Timer } from './components/timer'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <main>
         <Settings />
+        <Timer />
       </main>
     </>
   )
