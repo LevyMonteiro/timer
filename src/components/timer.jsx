@@ -5,8 +5,8 @@ const Timer = () => (
     <div id="time-left">
       <span id="session-minutes">25</span>:<span id="session-seconds">00</span>
     </div>
-    <button id="start_stop"><i class="fa-solid fa-play"></i></button>
-    <button id="reset"><i class="fa-solid fa-rotate"></i></button>
+    <button id="start_stop"><i className="fa-solid fa-play"></i></button>
+    <button id="reset"><i className="fa-solid fa-rotate"></i></button>
   </label>
  </>
 )
