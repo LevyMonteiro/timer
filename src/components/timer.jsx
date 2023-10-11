@@ -10,9 +10,9 @@ const Timer = () => {
     if(play && timeLeft) setTimeLeft(timeLeft - 1)
   }, 1000)
 
-  function handleBreakDecrease() {
+  async function handleBreakDecrease() {
     if (breakLength > 1) {
-      setBreakLength(breakLength - 1)
+      await setBreakLength((breakLength) => {breakLength - 1}) 
     }
   }
 
@@ -25,14 +25,14 @@ const Timer = () => {
   function handleSessionDecrease() {
     if (sessionLength > 1) {
       setSessionLength(sessionLength - 1)
-      setTimeLeft(timeLeft - 60)
+      setTimeLeft((sessionLength - 1) * 60)
     }
   }
 
   function handleSessionIncrease() {
     if (sessionLength < 60) {
       setSessionLength(sessionLength + 1)
-      setTimeLeft(timeLeft + 60)
+      setTimeLeft((sessionLength + 1) * 60)
     }
   }
 
