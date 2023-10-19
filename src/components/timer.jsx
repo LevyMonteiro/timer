@@ -8,12 +8,6 @@ const Timer = () => {
   const [timingType, setTimingType] = useState('Session')
   const [timeout, seTTimeout] = useState()
 
-  // const timeout = setTimeout(() => {
-  //   if(play && timeLeft) {
-  //     setTimeLeft(prevTimeLeft => prevTimeLeft - 1)
-  //   }
-  // }, 1000)
-
   const handleBreakDecrease = () => {
     if (breakLength > 1) {
       if(timingType === 'Break') {
@@ -70,29 +64,28 @@ const Timer = () => {
 
   const resetTimer = () => {
     const audio = document.getElementById('beep')
-    clearTimeout(timeout)
-    if(!timeLeft && timingType === 'Session') {
-      setTimeLeft(breakLength * 60);
-      setTimingType('Break')
-      audio.play()
-    } 
-    if(!timeLeft && timingType === 'Break') {
-      setTimeLeft(sessionLength * 60)
-      setTimingType('Session')
-      audio.play()
+    if(timeLeft === 0) {
+      setTimeout(() => {
+        if(timingType === 'Session') {
+          setTimeLeft(breakLength * 60);
+          setTimingType('Break')
+          audio.play()
+        } else if(timingType === 'Break') {
+          setTimeLeft(sessionLength * 60)
+          setTimingType('Session')
+          audio.play()
+        }
+      }, 0)
     }
   }
 
   const clock = () => {
     if(play) {  
-      clearTimeout(timeout)
-      seTTimeout(setTimeout(() => {
-        if (play && timeLeft) {
-          setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
-        }
-      }, 1000))
-      resetTimer()
       console.log(timeLeft)
+      if (timeLeft > 0) {
+        seTTimeout(setTimeout(() => setTimeLeft(prevTimeLeft => prevTimeLeft - 1), 1000))
+      }
+      resetTimer()
     } else {
       clearTimeout(timeout)
     }
@@ -131,7 +124,7 @@ const Timer = () => {
       <div id="timer-label">
         <h2>{timingType}</h2>
         <div id="time-left">{timeFormatter()}</div>
-        <button id="start_stop" onClick={handlePlay}><i className="fa-solid fa-play"></i></button>
+        <button id="start_stop" onClick={handlePlay}><i className={!play ? "fa-solid fa-play" : "fa-solid fa-pause" }></i></button>
         <button id="reset" onClick={handleReset}><i className="fa-solid fa-rotate"></i></button>
       </div>
 
