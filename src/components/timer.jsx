@@ -107,26 +107,35 @@ const Timer = () => {
 
   return (
     <>
-      <h1>Timer</h1>
-      <div id='break-label'>
-        <p>Break Length</p>
-        <div className='btn' id='break-decrement' onClick={handleBreakDecrease} disabled={play}><i className="fa-solid fa-arrow-down"></i></div>
-        <p id="break-length">{breakLength}</p>
-        <div className='btn' id='break-increment' onClick={handleBreakIncrease} disabled={play}><i className="fa-solid fa-arrow-up"></i></div>
+      <div className="firstRow">
+        <div id='break-label'>
+          <p>Break Length</p>
+          <div className="btnRow">
+            <button className='btn' id='break-decrement' onClick={handleBreakDecrease} disabled={play}><i className="fa-solid fa-arrow-down"></i></button>
+            <p id="break-length">{breakLength}</p>
+            <button className='btn' id='break-increment' onClick={handleBreakIncrease} disabled={play}><i className="fa-solid fa-arrow-up"></i></button>
+          </div>
+        </div>
+
+        <div id='session-label'>
+          <p>Session Length</p>
+          <div className="btnRow">
+            <button className='btn' id='session-decrement' onClick={handleSessionDecrease} disabled={play}><i className="fa-solid fa-arrow-down"></i></button>
+            <p id="session-length">{sessionLength}</p>
+            <button className='btn' id='session-increment' onClick={handleSessionIncrease} disabled={play}><i className="fa-solid fa-arrow-up"></i></button>
+          </div>
+        </div>
       </div>
 
-      <div id='session-label'>
-        <p>Session Length</p>
-        <div className='btn' id='session-decrement' onClick={handleSessionDecrease} disabled={play}><i className="fa-solid fa-arrow-down"></i></div>
-        <p id="session-length">{sessionLength}</p>
-        <div className='btn' id='session-increment' onClick={handleSessionIncrease} disabled={play}><i className="fa-solid fa-arrow-up"></i></div>
-      </div>
-
-      <div id="timer-label">
-        <h2>{timingType}</h2>
-        <div id="time-left">{timeFormatter()}</div>
-        <div className='btn' id="start_stop" onClick={handlePlay}><i className={!play ? "fa-solid fa-play" : "fa-solid fa-pause" }></i></div>
-        <div className='btn' id="reset" onClick={handleReset}><i className="fa-solid fa-rotate"></i></div>
+      <div className="secondRow">
+        <div id="timer-label">
+          <h3>{timingType}</h3>
+          <div id="time-left">{timeFormatter()}</div>
+          <div className="btnRow">
+            <button className='btn' id="start_stop" onClick={handlePlay}><i className={!play ? "fa-solid fa-play" : "fa-solid fa-pause" }></i></button>
+            <button className='btn' id="reset" onClick={handleReset}><i className="fa-solid fa-rotate"></i></button>
+          </div>
+        </div>
       </div>
 
       <audio
