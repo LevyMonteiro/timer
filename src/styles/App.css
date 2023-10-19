@@ -17,9 +17,10 @@
   font-size: 180%;
   color: white;
   background-color: #121214;
+  gap: 8px;
 }
 
 
-main {
+wrapper {
   margin: auto;
 }
