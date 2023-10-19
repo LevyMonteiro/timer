@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import '../styles/timer.css'
 
 const Timer = () => {
   const [breakLength, setBreakLength] = useState(5)
