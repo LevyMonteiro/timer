@@ -129,8 +129,10 @@ const Timer = () => {
 
       <div className="secondRow">
         <div id="timer-label">
-          <h3>{timingType}</h3>
-          <div id="time-left">{timeFormatter()}</div>
+          <div className="countdown">
+            <h3>{timingType}</h3>
+            <div id="time-left">{timeFormatter()}</div>
+          </div>
           <div className="btnRow">
             <button className='btn' id="start_stop" onClick={handlePlay}><i className={!play ? "fa-solid fa-play" : "fa-solid fa-pause" }></i></button>
             <button className='btn' id="reset" onClick={handleReset}><i className="fa-solid fa-rotate"></i></button>

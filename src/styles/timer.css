@@ -3,6 +3,7 @@ body * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: black 3px 3px 5px;
 }
 
 .firstRow {
@@ -23,6 +24,15 @@ body * {
   cursor: pointer;
   color: white;
   font-size: 26px;
+}
+
+.countdown {
+  background-color: #1f1f1f;
+  padding: 18px;
+  border-radius: 8px;
+  width: 450px;
+  margin: 16px 0;
+  box-shadow: black 2px 2px 5px;
 }
 
 #time-left {
