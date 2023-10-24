@@ -9,12 +9,13 @@ body * {
 .firstRow {
   flex-direction: row;
   gap: 80px;
+  padding: 16px 0;
 }
 
 .btnRow {
   flex-direction: row;
   gap: 16px;
-  padding: 16px;
+  margin-top: 16px;
 }
 
 .btn {
