@@ -36,6 +36,10 @@ body * {
   box-shadow: black 2px 2px 5px;
 }
 
+.red {
+  color: red;
+}
+
 #time-left {
   font-size:  280%;
 }

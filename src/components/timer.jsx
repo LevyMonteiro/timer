@@ -82,7 +82,6 @@ const Timer = () => {
 
   const clock = () => {
     if(play) {  
-      console.log(timeLeft)
       if (timeLeft > 0) {
         seTTimeout(setTimeout(() => setTimeLeft(prevTimeLeft => prevTimeLeft - 1), 1000))
       }
@@ -129,7 +128,7 @@ const Timer = () => {
 
       <div className="secondRow">
         <div id="timer-label">
-          <div className="countdown">
+          <div className={timeLeft <= 30 ? "red countdown" : "countdown"}>
             <h3>{timingType}</h3>
             <div id="time-left">{timeFormatter()}</div>
           </div>
