@@ -90,7 +90,7 @@ const Timer = () => {
         if(timingType === 'Session') {
           setTimeLeft(breakLength * 60);
           setTimingType('Break')
-          notifier.notify('Session over', 'Time for a break, take the opportunity to catch some air and stretch your body!')
+          notifier.notify('Session over', 'Time for a break, catch some air and stretch your body!')
           audio.play()
         } else if(timingType === 'Break') {
             setTimeLeft(sessionLength * 60)
