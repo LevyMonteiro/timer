@@ -1,9 +1,10 @@
 {
   "name": "timer",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type":"commonjs",
   "main": "electron/main.cjs",
+  "author": "Levy Monteiro",
   "scripts": {
     "start": "electron .",
     "dev": "vite",

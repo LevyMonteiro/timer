@@ -45,9 +45,23 @@ const Timer = () => {
     }
   }
 
+  const notifier = {
+    getPermission: async () => {
+      const permission = await Notification.requestPermission()
+    
+      if(permission !== 'granted') {
+        console.log('Permissao de notificao negada!')
+      }
+    },
+    notify: async (title, body) => {
+      new Notification(title, {body, icon: '../relogio.png'})
+    }
+  }
+
   const handlePlay = () => {
     clearTimeout(timeout)
     setPlay(!play)
+    notifier.getPermission()
   }
 
   const handleReset = () => {
@@ -65,15 +79,18 @@ const Timer = () => {
 
   const resetTimer = () => {
     const audio = document.getElementById('beep')
+
     if(timeLeft === 0) {
       setTimeout(() => {
         if(timingType === 'Session') {
           setTimeLeft(breakLength * 60);
           setTimingType('Break')
+          notifier.notify('Session over', 'Time for a break, take the opportunity to catch some air and stretch your body!')
           audio.play()
         } else if(timingType === 'Break') {
           setTimeLeft(sessionLength * 60)
           setTimingType('Session')
+          notifier.notify('Break over', "Let's refocus and eliminate distractions!")
           audio.play()
         }
       }, 0)
