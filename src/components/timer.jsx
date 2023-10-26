@@ -50,7 +50,7 @@ const Timer = () => {
       const permission = await Notification.requestPermission()
     
       if(permission !== 'granted') {
-        console.log('Permissao de notificao negada!')
+        throw new Error('Notifications permition denied!')
       }
     },
     notify: async (title, body) => {
@@ -58,10 +58,15 @@ const Timer = () => {
     }
   }
 
-  const handlePlay = () => {
+  const handlePlay = async () => {
     clearTimeout(timeout)
     setPlay(!play)
-    notifier.getPermission()
+
+    try {
+      await notifier.getPermission()
+    } catch(err) {
+      console.log(err)
+    }
   }
 
   const handleReset = () => {
@@ -88,11 +93,11 @@ const Timer = () => {
           notifier.notify('Session over', 'Time for a break, take the opportunity to catch some air and stretch your body!')
           audio.play()
         } else if(timingType === 'Break') {
-          setTimeLeft(sessionLength * 60)
-          setTimingType('Session')
-          notifier.notify('Break over', "Let's refocus and eliminate distractions!")
-          audio.play()
-        }
+            setTimeLeft(sessionLength * 60)
+            setTimingType('Session')
+            notifier.notify('Break over', "Let's refocus and eliminate distractions!")
+            audio.play()
+          }
       }, 0)
     }
   }
