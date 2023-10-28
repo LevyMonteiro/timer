@@ -30,6 +30,8 @@ const controlWindow = () => {
     return {x, y}
   }
 
+  win.on('blur', win.hide)
+
   return {toggle}
 }
 
