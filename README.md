@@ -5,6 +5,8 @@ This is a timer countdown with Session and Break types that are based on pomodor
 Check out a short video demonstrating the app in action:
 
 
+https://github.com/LevyMonteiro/timer/assets/102385102/01696317-bdb5-404c-b2f0-9d2dc3cabb56
+
 
 ## Getting Started
 To view the website, simply visit the live URL <a href="https://timer-levymonteiro.vercel.app/" target="_blank">here</a>.
