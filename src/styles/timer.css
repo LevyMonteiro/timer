@@ -47,3 +47,39 @@ body * {
 h3 {
   font-size: 130%;
 } 
+
+@media (max-width: 500px) {
+  .countdown {
+    width: 380px;
+  }  
+
+  .firstRow {
+    width: 380px;
+    gap: 60px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .countdown {
+    width: 320px;
+  }  
+
+  .firstRow {
+    width: 320px;
+    gap: 40px;
+    font-size: 20px;
+  }
+
+  #time-left {
+    font-size:  250%;
+  }
+  
+  h3 {
+    font-size: 110%;
+  } 
+
+  .btn {
+    font-size: 20px;
+  }
+}
