@@ -1,19 +1,16 @@
 import '../styles/App.css';
-import { Timer } from './timer';
+import Display from './Display';
+import Controls from './Controls';
 import { Footer } from './footer';
 
-function App() {
+export default function App() {
   return (
     <div className='wrapper'>
-      <main>
-        <Timer />
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
+      <Display />
+      <Controls />
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export {};

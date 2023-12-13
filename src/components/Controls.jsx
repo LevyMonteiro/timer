@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react';
-import '../styles/timer.css';
+import { useState } from 'react';
 
-function Timer() {
+function Controls() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
-  const [timeLeft, setTimeLeft] = useState(1500);
   const [play, setPlay] = useState(false);
-  const [timingType, setTimingType] = useState('Session');
-  const [timeout, seTTimeout] = useState();
 
   const handleBreakDecrease = () => {
     if (breakLength > 1) {
@@ -45,19 +41,6 @@ function Timer() {
     }
   };
 
-  const notifier = {
-    getPermission: async () => {
-      const permission = await Notification.requestPermission();
-
-      if (permission !== 'granted') {
-        throw new Error('Notifications permition denied!');
-      }
-    },
-    notify: async (title, body) => {
-      new Notification(title, { body, icon: '../relogio.png' });
-    },
-  };
-
   const handlePlay = async () => {
     clearTimeout(timeout);
     setPlay(!play);
@@ -81,61 +64,6 @@ function Timer() {
     setBreakLength(5);
     setSessionLength(25);
   };
-
-  const resetTimer = () => {
-    const audio = document.getElementById('beep');
-
-    if (timeLeft === 0) {
-      setTimeout(() => {
-        if (timingType === 'Session') {
-          setTimeLeft(breakLength * 60);
-          setTimingType('Break');
-          notifier.notify(
-            'Session over',
-            'Time for a break, catch some air and stretch your body!',
-          );
-          audio.play();
-        } else if (timingType === 'Break') {
-          setTimeLeft(sessionLength * 60);
-          setTimingType('Session');
-          notifier.notify(
-            'Break over',
-            "Let's refocus and eliminate distractions!",
-          );
-          audio.play();
-        }
-      }, 0);
-    }
-  };
-
-  const clock = () => {
-    if (play) {
-      if (timeLeft > 0) {
-        seTTimeout(
-          setTimeout(
-            () => setTimeLeft((prevTimeLeft) => prevTimeLeft - 1),
-            1000,
-          ),
-        );
-      }
-      resetTimer();
-    } else {
-      clearTimeout(timeout);
-    }
-  };
-
-  useEffect(() => {
-    clock();
-  }, [play, timeLeft]);
-
-  function timeFormatter() {
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft - minutes * 60;
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
-
-    return `${formattedMinutes}:${formattedSeconds}`;
-  }
 
   return (
     <>
@@ -188,29 +116,17 @@ function Timer() {
       </div>
 
       <div className='secondRow'>
-        <div id='timer-label'>
-          <div className={timeLeft <= 30 ? 'red countdown' : 'countdown'}>
-            <h3>{timingType}</h3>
-            <div id='time-left'>{timeFormatter()}</div>
-          </div>
-          <div className='btnRow'>
-            <button className='btn' id='start_stop' onClick={handlePlay}>
-              <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
-            </button>
-            <button className='btn' id='reset' onClick={handleReset}>
-              <i className='fa-solid fa-rotate' />
-            </button>
-          </div>
+        <div className='btnRow'>
+          <button className='btn' id='start_stop' onClick={handlePlay}>
+            <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
+          </button>
+          <button className='btn' id='reset' onClick={handleReset}>
+            <i className='fa-solid fa-rotate' />
+          </button>
         </div>
       </div>
-
-      <audio
-        id='beep'
-        preload='auto'
-        src='https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav'
-      />
     </>
   );
 }
 
-export { Timer };
+export default Controls;
