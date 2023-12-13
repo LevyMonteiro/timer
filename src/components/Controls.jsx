@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Controls() {
+export default function Controls() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
   const [play, setPlay] = useState(false);
@@ -128,5 +128,3 @@ function Controls() {
     </>
   );
 }
-
-export default Controls;
