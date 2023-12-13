@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../styles/timer.css';
 
-const Timer = () => {
+function Timer() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
   const [timeLeft, setTimeLeft] = useState(1500);
@@ -131,8 +131,8 @@ const Timer = () => {
   function timeFormatter() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft - minutes * 60;
-    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
     return `${formattedMinutes}:${formattedSeconds}`;
   }
@@ -149,7 +149,7 @@ const Timer = () => {
               onClick={handleBreakDecrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-down'></i>
+              <i className='fa-solid fa-arrow-down' />
             </button>
             <p id='break-length'>{breakLength}</p>
             <button
@@ -158,7 +158,7 @@ const Timer = () => {
               onClick={handleBreakIncrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-up'></i>
+              <i className='fa-solid fa-arrow-up' />
             </button>
           </div>
         </div>
@@ -172,7 +172,7 @@ const Timer = () => {
               onClick={handleSessionDecrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-down'></i>
+              <i className='fa-solid fa-arrow-down' />
             </button>
             <p id='session-length'>{sessionLength}</p>
             <button
@@ -181,7 +181,7 @@ const Timer = () => {
               onClick={handleSessionIncrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-up'></i>
+              <i className='fa-solid fa-arrow-up' />
             </button>
           </div>
         </div>
@@ -195,12 +195,10 @@ const Timer = () => {
           </div>
           <div className='btnRow'>
             <button className='btn' id='start_stop' onClick={handlePlay}>
-              <i
-                className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'}
-              ></i>
+              <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
             </button>
             <button className='btn' id='reset' onClick={handleReset}>
-              <i className='fa-solid fa-rotate'></i>
+              <i className='fa-solid fa-rotate' />
             </button>
           </div>
         </div>
@@ -213,6 +211,6 @@ const Timer = () => {
       />
     </>
   );
-};
+}
 
 export { Timer };
