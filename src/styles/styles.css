@@ -101,29 +101,26 @@ h3 {
     font-size: 20px;
   }
 }
-#footer {
+.footer {
   font-size: 16px;
   margin: 20px 0;
   filter: brightness(0.8);
-}
-
-#by {
   color: white;
+}
+.footer p {
   font-family: "Raleway", sans-serif;
   transform: scale(0.9);
   display: flex;
   flex-direction: row;
   text-shadow: black 3px 3px 5px;
 }
-
-#github {
+.footer p a {
   font-weight: 600;
   transform: scale(0.9);
   text-decoration: none;
   color: white;
 }
-
-#github:hover {
+.footer p a:hover {
   transform: scale(1);
 }
 
