@@ -4,6 +4,20 @@ import Display from './Display';
 import Controls from './Controls';
 import { Footer } from './footer';
 import { AppContext } from '../context/AppContext';
+import { ControlsContext } from '../context/ControlsContext';
+
+export const notifier = {
+  getPermission: async () => {
+    const permission = await Notification.requestPermission();
+
+    if (permission !== 'granted') {
+      throw new Error('Notifications permition denied!');
+    }
+  },
+  notify: async (title, body) => {
+    new Notification(title, { body, icon: '../timer.svg' });
+  },
+};
 
 export default function App() {
   const {
@@ -16,18 +30,7 @@ export default function App() {
     play,
   } = useContext(AppContext);
 
-  const notifier = {
-    getPermission: async () => {
-      const permission = await Notification.requestPermission();
-
-      if (permission !== 'granted') {
-        throw new Error('Notifications permition denied!');
-      }
-    },
-    notify: async (title, body) => {
-      new Notification(title, { body, icon: '../timer.svg' });
-    },
-  };
+  const { breakLength, sessionLength } = useContext(ControlsContext);
 
   const resetTimer = () => {
     const audio = document.getElementById('beep');

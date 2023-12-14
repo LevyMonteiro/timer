@@ -13,7 +13,6 @@ export default function Display() {
 
     return `${formattedMinutes}:${formattedSeconds}`;
   }
-
   return (
     <>
       <div id='timer-label'>

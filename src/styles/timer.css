@@ -12,6 +12,10 @@ body * {
   padding: 16px 0;
 }
 
+/* .firstRow .btn {
+  color: hsl(0 0% 100% / 0.3);
+} */
+
 .btnRow {
   flex-direction: row;
   gap: 16px;
@@ -41,17 +45,17 @@ body * {
 }
 
 #time-left {
-  font-size:  280%;
+  font-size: 280%;
 }
 
 h3 {
   font-size: 130%;
-} 
+}
 
 @media (max-width: 500px) {
   .countdown {
     width: 380px;
-  }  
+  }
 
   .firstRow {
     width: 380px;
@@ -63,7 +67,7 @@ h3 {
 @media (max-width: 400px) {
   .countdown {
     width: 320px;
-  }  
+  }
 
   .firstRow {
     width: 320px;
@@ -72,12 +76,12 @@ h3 {
   }
 
   #time-left {
-    font-size:  250%;
+    font-size: 250%;
   }
-  
+
   h3 {
     font-size: 110%;
-  } 
+  }
 
   .btn {
     font-size: 20px;

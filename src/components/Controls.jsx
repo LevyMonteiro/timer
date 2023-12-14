@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { ControlsContext } from '../context/ControlsContext';
+import { AppContext } from '../context/AppContext';
+import { useContext } from 'react';
+import { notifier } from './App';
 
 export default function Controls() {
-  const [breakLength, setBreakLength] = useState(5);
-  const [sessionLength, setSessionLength] = useState(25);
+  const { breakLength, setBreakLength, sessionLength, setSessionLength } =
+    useContext(ControlsContext);
+
+  const { setTimeLeft, timingType, setTimingType, timeout, play, setPlay } =
+    useContext(AppContext);
 
   const handleBreakDecrease = () => {
     if (breakLength > 1) {
@@ -71,6 +77,7 @@ export default function Controls() {
           <p>Break Length</p>
           <div className='btnRow'>
             <button
+              // if (play) add transform blur
               className='btn'
               id='break-decrement'
               onClick={handleBreakDecrease}
@@ -80,6 +87,7 @@ export default function Controls() {
             </button>
             <p id='break-length'>{breakLength}</p>
             <button
+              // if (play) add transform blur
               className='btn'
               id='break-increment'
               onClick={handleBreakIncrease}
@@ -94,6 +102,7 @@ export default function Controls() {
           <p>Session Length</p>
           <div className='btnRow'>
             <button
+              // if (play) add transform blur
               className='btn'
               id='session-decrement'
               onClick={handleSessionDecrease}
@@ -103,6 +112,7 @@ export default function Controls() {
             </button>
             <p id='session-length'>{sessionLength}</p>
             <button
+              // if (play) add transform blur
               className='btn'
               id='session-increment'
               onClick={handleSessionIncrease}

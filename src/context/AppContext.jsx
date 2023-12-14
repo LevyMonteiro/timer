@@ -8,19 +8,19 @@ export default function AppProvider({ children }) {
   const [timeout, seTTimeout] = useState();
   const [play, setPlay] = useState(false);
 
-  const contextValues = {
-    timeLeft,
-    setTimeLeft,
-    timingType,
-    setTimingType,
-    timeout,
-    seTTimeout,
-    play,
-    setPlay,
-  };
-
   return (
-    <AppContext.Provider value={{ contextValues }}>
+    <AppContext.Provider
+      value={{
+        timeLeft,
+        setTimeLeft,
+        timingType,
+        setTimingType,
+        timeout,
+        seTTimeout,
+        play,
+        setPlay,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
