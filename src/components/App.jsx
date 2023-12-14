@@ -1,13 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import '../styles/App.css';
 import Display from './Display';
 import Controls from './Controls';
 import { Footer } from './footer';
-const play = ''; //temporary to stop throw error and render
-const timeLeft = ''; //temporary to stop throw error and render
-const timeout = ''; //temporary to stop throw error and render
+import { AppContext } from '../context/AppContext';
 
 export default function App() {
+  const {
+    timeLeft,
+    setTimeLeft,
+    timingType,
+    setTimingType,
+    timeout,
+    seTTimeout,
+    play,
+  } = useContext(AppContext);
+
   const notifier = {
     getPermission: async () => {
       const permission = await Notification.requestPermission();
@@ -17,7 +25,7 @@ export default function App() {
       }
     },
     notify: async (title, body) => {
-      new Notification(title, { body, icon: '../relogio.png' });
+      new Notification(title, { body, icon: '../timer.svg' });
     },
   };
 

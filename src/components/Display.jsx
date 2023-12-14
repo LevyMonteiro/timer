@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import '../styles/timer.css';
+import { AppContext } from '../context/AppContext';
+import { useContext } from 'react';
 
 export default function Display() {
-  const [timeLeft, setTimeLeft] = useState(1500);
-  const [timingType, setTimingType] = useState('Session');
-  const [timeout, seTTimeout] = useState();
+  const { timeLeft, timingType } = useContext(AppContext);
 
   function timeFormatter() {
     const minutes = Math.floor(timeLeft / 60);
