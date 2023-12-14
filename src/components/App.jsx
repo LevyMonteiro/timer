@@ -67,7 +67,7 @@ export default function App() {
   }, [play, timeLeft]);
   return (
     <>
-      <div className='wrapper'>
+      <div className='container'>
         <Display />
         <Controls />
         <Footer />

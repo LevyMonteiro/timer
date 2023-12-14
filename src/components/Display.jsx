@@ -14,13 +14,9 @@ export default function Display() {
     return `${formattedMinutes}:${formattedSeconds}`;
   }
   return (
-    <>
-      <div id='timer-label'>
-        <div className={timeLeft <= 30 ? 'red countdown' : 'countdown'}>
-          <h3>{timingType}</h3>
-          <div id='time-left'>{timeFormatter()}</div>
-        </div>
-      </div>
-    </>
+    <div className={timeLeft <= 30 ? 'red display' : 'display'}>
+      <h3>{timingType}</h3>
+      <div className='time-left'>{timeFormatter()}</div>
+    </div>
   );
 }

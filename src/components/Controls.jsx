@@ -85,23 +85,19 @@ export default function Controls() {
   return (
     <div className='controls'>
       <div className='firstRow'>
-        <div id='break-label'>
+        <div className='break-label'>
           <p>Break Length</p>
           <div className='btnRow'>
             <button
-              // if (play) add transform blur
-              className='btn'
-              id='break-decrement'
+              className={play ? 'btn btnDisabled' : 'btn'}
               onClick={handleBreakDecrease}
               disabled={play}
             >
               <i className='fa-solid fa-arrow-down' />
             </button>
-            <p id='break-length'>{breakLength}</p>
+            <p>{breakLength}</p>
             <button
-              // if (play) add transform blur
-              className='btn'
-              id='break-increment'
+              className={play ? 'btn btnDisabled' : 'btn'}
               onClick={handleBreakIncrease}
               disabled={play}
             >
@@ -110,23 +106,19 @@ export default function Controls() {
           </div>
         </div>
 
-        <div id='session-label'>
+        <div className='session-label'>
           <p>Session Length</p>
           <div className='btnRow'>
             <button
-              // if (play) add transform blur
-              className='btn'
-              id='session-decrement'
+              className={play ? 'btn btnDisabled' : 'btn'}
               onClick={handleSessionDecrease}
               disabled={play}
             >
               <i className='fa-solid fa-arrow-down' />
             </button>
-            <p id='session-length'>{sessionLength}</p>
+            <p>{sessionLength}</p>
             <button
-              // if (play) add transform blur
-              className='btn'
-              id='session-increment'
+              className={play ? 'btn btnDisabled' : 'btn'}
               onClick={handleSessionIncrease}
               disabled={play}
             >
@@ -136,16 +128,14 @@ export default function Controls() {
         </div>
       </div>
 
-      <div className='secondRow btnRow'>
-        <button className='btn' id='start_stop' onClick={handlePlay}>
+      <div className='btnRow'>
+        <button className='btn' onClick={handlePlay}>
           <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
-          {/* <Play /> */}
         </button>
-        <button className='btn' id='reset' onClick={handleReset}>
+        <button className='btn' onClick={handleReset}>
           <i className='fa-solid fa-rotate' />
-          {/* <TimerReset /> */}
         </button>
-        <button className='btn' id='reset' onClick={handleThemeChange}>
+        <button className='btn' onClick={handleThemeChange}>
           {theme === 'dark' ? <Sun /> : <Moon />}
         </button>
       </div>
