@@ -1,3 +1,4 @@
+import '../styles/styles.css';
 import { ControlsContext } from '../context/ControlsContext';
 import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
@@ -71,7 +72,7 @@ export default function Controls() {
   };
 
   return (
-    <>
+    <div className='controls'>
       <div className='firstRow'>
         <div id='break-label'>
           <p>Break Length</p>
@@ -134,6 +135,6 @@ export default function Controls() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

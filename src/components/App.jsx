@@ -1,4 +1,4 @@
-import '../styles/App.css';
+import '../styles/styles.css';
 import { useEffect, useContext } from 'react';
 import Display from './Display';
 import Controls from './Controls';

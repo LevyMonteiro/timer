@@ -1,4 +1,4 @@
-import '../styles/timer.css';
+import '../styles/styles.css';
 import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
 
