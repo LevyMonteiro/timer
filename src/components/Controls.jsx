@@ -1,7 +1,7 @@
 import { ControlsContext } from '../context/ControlsContext';
 import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
-import { notifier } from './App';
+import { notifier } from '../js/notifier';
 
 export default function Controls() {
   const { breakLength, setBreakLength, sessionLength, setSessionLength } =
