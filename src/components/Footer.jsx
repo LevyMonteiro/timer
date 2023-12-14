@@ -1,10 +1,10 @@
 import '../styles/footer.css';
 
-function Footer() {
+export default function Footer() {
   return (
     <footer id='footer'>
       <p id='by'>
-        by
+        coded by
         <a
           href='https://github.com/levymonteiro'
           id='github'
@@ -17,5 +17,3 @@ function Footer() {
     </footer>
   );
 }
-
-export { Footer };

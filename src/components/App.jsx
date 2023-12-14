@@ -1,8 +1,8 @@
-import { useEffect, useContext } from 'react';
 import '../styles/App.css';
+import { useEffect, useContext } from 'react';
 import Display from './Display';
 import Controls from './Controls';
-import { Footer } from './footer';
+import Footer from './Footer';
 import { AppContext } from '../context/AppContext';
 import { ControlsContext } from '../context/ControlsContext';
 import { notifier } from '../js/notifier';
