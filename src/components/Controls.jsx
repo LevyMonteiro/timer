@@ -1,10 +1,13 @@
 import '../styles/styles.css';
+import { useContext, useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 import { ControlsContext } from '../context/ControlsContext';
 import { AppContext } from '../context/AppContext';
-import { useContext } from 'react';
 import { notifier } from '../js/notifier';
 
 export default function Controls() {
+  const [theme, setTheme] = useState('dark');
+
   const { breakLength, setBreakLength, sessionLength, setSessionLength } =
     useContext(ControlsContext);
 
@@ -71,6 +74,14 @@ export default function Controls() {
     setSessionLength(25);
   };
 
+  const handleThemeChange = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  };
+
   return (
     <div className='controls'>
       <div className='firstRow'>
@@ -125,15 +136,18 @@ export default function Controls() {
         </div>
       </div>
 
-      <div className='secondRow'>
-        <div className='btnRow'>
-          <button className='btn' id='start_stop' onClick={handlePlay}>
-            <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
-          </button>
-          <button className='btn' id='reset' onClick={handleReset}>
-            <i className='fa-solid fa-rotate' />
-          </button>
-        </div>
+      <div className='secondRow btnRow'>
+        <button className='btn' id='start_stop' onClick={handlePlay}>
+          <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
+          {/* <Play /> */}
+        </button>
+        <button className='btn' id='reset' onClick={handleReset}>
+          <i className='fa-solid fa-rotate' />
+          {/* <TimerReset /> */}
+        </button>
+        <button className='btn' id='reset' onClick={handleThemeChange}>
+          {theme === 'dark' ? <Sun /> : <Moon />}
+        </button>
       </div>
     </div>
   );
