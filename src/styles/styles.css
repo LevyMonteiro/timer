@@ -102,6 +102,9 @@ body * {
 .controls .firstRow .btnDisabled {
   color: hsla(0, 0%, 100%, 0.4);
 }
+.controls .firstRow .btnDisabled:hover {
+  cursor: default;
+}
 
 .footer {
   font-size: 16px;

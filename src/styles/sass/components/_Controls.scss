@@ -28,6 +28,10 @@
 
     .btnDisabled {
       color: hsl(0 0% 100% / 0.4);
+
+      &:hover {
+        cursor: default;
+      }
     }
   }
 }
