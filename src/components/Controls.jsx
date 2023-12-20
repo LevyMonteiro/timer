@@ -141,7 +141,6 @@ export default function Controls() {
           {play ? <Pause /> : <Play />}
         </button>
         <button className='btn' onClick={handleReset}>
-          {/* <i className='fa-solid fa-rotate' /> */}
           <RotateCcw />
         </button>
         <button className='btn' onClick={handleThemeChange}>

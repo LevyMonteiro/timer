@@ -33,9 +33,7 @@ body * {
 
     .controls {
       .firstRow {
-        // width: 380px;
         gap: 40px;
-        font-size: 24px;
       }
     }
   }
@@ -65,8 +63,8 @@ body * {
       }
 
       .btnRow {
-        .btn {
-          font-size: 20px;
+        .btn svg {
+          width: 20px;
         }
       }
     }
