@@ -1,6 +1,14 @@
 import '../styles/styles.css';
 import { useContext, useState } from 'react';
-import { Sun, Moon } from 'lucide-react';
+import {
+  Sun,
+  Moon,
+  RotateCcw,
+  Play,
+  ArrowUp,
+  ArrowDown,
+  Pause,
+} from 'lucide-react';
 import { ControlsContext } from '../context/ControlsContext';
 import { AppContext } from '../context/AppContext';
 import { notifier } from '../js/notifier';
@@ -93,7 +101,7 @@ export default function Controls() {
               onClick={handleBreakDecrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-down' />
+              <ArrowDown />
             </button>
             <p>{breakLength}</p>
             <button
@@ -101,7 +109,7 @@ export default function Controls() {
               onClick={handleBreakIncrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-up' />
+              <ArrowUp />
             </button>
           </div>
         </div>
@@ -114,7 +122,7 @@ export default function Controls() {
               onClick={handleSessionDecrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-down' />
+              <ArrowDown />
             </button>
             <p>{sessionLength}</p>
             <button
@@ -122,7 +130,7 @@ export default function Controls() {
               onClick={handleSessionIncrease}
               disabled={play}
             >
-              <i className='fa-solid fa-arrow-up' />
+              <ArrowUp />
             </button>
           </div>
         </div>
@@ -130,10 +138,11 @@ export default function Controls() {
 
       <div className='btnRow'>
         <button className='btn' onClick={handlePlay}>
-          <i className={!play ? 'fa-solid fa-play' : 'fa-solid fa-pause'} />
+          {play ? <Pause /> : <Play />}
         </button>
         <button className='btn' onClick={handleReset}>
-          <i className='fa-solid fa-rotate' />
+          {/* <i className='fa-solid fa-rotate' /> */}
+          <RotateCcw />
         </button>
         <button className='btn' onClick={handleThemeChange}>
           {theme === 'dark' ? <Sun /> : <Moon />}
