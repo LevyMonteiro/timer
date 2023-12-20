@@ -53,6 +53,9 @@ body * {
   .container .controls .btnRow .btn svg {
     width: 20px;
   }
+  .container .footer {
+    font-size: 14px;
+  }
 }
 .display {
   background-color: #1f1f1f;
@@ -126,12 +129,6 @@ body * {
 }
 .footer p a:hover {
   transform: scale(1);
-}
-
-@media (max-width: 400px) {
-  #footer {
-    font-size: 14px;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
