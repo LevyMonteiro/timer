@@ -11,7 +11,7 @@
       background: none;
       border: none;
       outline: none;
-      color: white;
+      color: var(--secondary);
       cursor: pointer;
       padding: 0;
     }
@@ -27,7 +27,7 @@
     }
 
     .btnDisabled {
-      color: hsl(0 0% 100% / 0.4);
+      color: var(--btn-disabled);
 
       &:hover {
         cursor: default;

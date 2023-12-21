@@ -1,3 +1,4 @@
+@use '../abstracts/' as *;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 
 * {
@@ -11,7 +12,7 @@ body * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-shadow: black 3px 3px 5px;
+  text-shadow: var(--shadow);
 }
 
 #root {
@@ -19,8 +20,8 @@ body * {
   height: 100vh;
   overflow: auto;
   font-family: 'Inter:wght@600', sans-serif;
-  color: white;
-  background-color: #121214;
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
 .container {

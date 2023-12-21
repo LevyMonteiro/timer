@@ -14,10 +14,14 @@ import { AppContext } from '../context/AppContext';
 import { notifier } from '../js/notifier';
 
 export default function Controls() {
-  const [theme, setTheme] = useState('dark');
-
-  const { breakLength, setBreakLength, sessionLength, setSessionLength } =
-    useContext(ControlsContext);
+  const {
+    breakLength,
+    setBreakLength,
+    sessionLength,
+    setSessionLength,
+    theme,
+    setTheme,
+  } = useContext(ControlsContext);
 
   const { setTimeLeft, timingType, setTimingType, timeout, play, setPlay } =
     useContext(AppContext);

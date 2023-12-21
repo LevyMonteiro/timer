@@ -1,10 +1,10 @@
 .display {
-  background-color: #1f1f1f;
+  background-color: var(--display-background);
   padding: 18px;
   border-radius: 8px;
   width: 100%;
   margin: 16px 0;
-  box-shadow: black 2px 2px 5px;
+  box-shadow: var(--box-shadow);
 
   h3 {
     font-size: 38px;

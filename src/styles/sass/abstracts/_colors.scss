@@ -1,0 +1,17 @@
+:root {
+  --primary: #121214;
+  --secondary: white;
+  --display-background: #1f1f1f;
+  --box-shadow: black 2px 2px 5px;
+  --shadow: black 3px 3px 5px;
+  --btn-disabled: hsl(0 0% 100% / 0.4);
+}
+
+[theme='light'] {
+  --primary: #f5f5f5;
+  --secondary: #18181b;
+  --display-background: white;
+  --box-shadow: gray 2px 2px 5px;
+  --shadow: none;
+  --btn-disabled: #71717a;
+}
