@@ -89,8 +89,10 @@ export default function Controls() {
   const handleThemeChange = () => {
     if (theme === 'dark') {
       setTheme('light');
+      localStorage.setItem('theme', 'light');
     } else {
       setTheme('dark');
+      localStorage.setItem('theme', 'dark');
     }
   };
 
