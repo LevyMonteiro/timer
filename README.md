@@ -1,12 +1,19 @@
 # Timer
 
-This is a timer countdown with Session and Break types that are based on pomodoro technique.
+## About
+
+Discover a meticulously crafted timer countdown designed to enhance focus during study sessions, offering Session and Break types inspired by the Pomodoro technique.
+
+This React-based application not only leverages hooks for efficient state management but also employs the Context API to seamlessly share data between components. The toggle theme functionality ensures a personalized experience, with changes persistently stored in the browser through local storage.
 
 ## Demo
 
 Check out a short video demonstrating the app in action:
 
-https://github.com/LevyMonteiro/timer/assets/102385102/01696317-bdb5-404c-b2f0-9d2dc3cabb56
+
+https://github.com/LevyMonteiro/timer/assets/102385102/f2476d23-852e-4db9-8b4c-a89ced97794c
+
+
 
 ## Getting Started
 
@@ -31,6 +38,10 @@ This website was built using the following technologies:
 <li>Javascript</li>
 <li>Vite</li>
 <li>React</li>
+<li>Sass</li>
+<li>ESLint</li>
+<li>Prettier</li>
+<li>Lucide</li>
 </ul>
 
 ## Reference
